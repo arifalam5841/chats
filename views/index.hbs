@@ -1,0 +1,25 @@
+{{#> layout}}
+  <div class="chat-container">
+    <h1>Real-Time Chat</h1>
+    
+    <div class="messages">
+      {{!-- {{#each messages}}
+        <div class="message">
+          <strong>{{this.username}}</strong>: {{this.text}}
+        </div>
+      {{/each}} --}}
+    </div>
+
+    <form action="/send" method="POST">
+      <input type="text" name="username" placeholder="Enter your name" required>
+      <textarea name="text" placeholder="Type your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="socket-chat">
+      <input id="socket-username" type="text" placeholder="Enter your name" />
+      <input id="socket-message" type="text" placeholder="Type a message" />
+      <button id="send-socket-message">Send</button>
+    </div>
+  </div>
+{{/layout}}
